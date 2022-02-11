@@ -8,9 +8,9 @@
  *
  * Please update the following with your information:
  *
- *      Name: <YOUR_NAME>
- *      Student ID: <YOUR_STUDENT_ID>
- *      Date: <SUBMISSION_DATE>
+ *      Name: Sepehr ALipour
+ *      Student ID: 107296212
+ *      Date: 02/07/2022
  *
  * Please see all unit tests in the files problem-01.test.js, problem-02.test.js, etc.
  */
@@ -71,7 +71,8 @@
  ******************************************************************************/
 function getTotalResults(data) {
   // TODO: fix this code so it gets and returns the `total_results` property from observation data
-  return data;
+
+  return data.total_results;
 }
 
 /*******************************************************************************
@@ -94,7 +95,12 @@ function getTotalResults(data) {
  * Your function shouldn't return anything, just call console.log()
  ******************************************************************************/
 function observationSummary(data) {
-  // TODO
+  for (let length = 0; length < data.results.length; length++) {
+    let element = data.results[length];
+    console.log(
+      '#' + element.id + ' (' + element.observed_on_details.date + ') ' + element.species_guess
+    );
+  }
 }
 
 /*******************************************************************************
@@ -106,7 +112,11 @@ function observationSummary(data) {
  * See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  ******************************************************************************/
 function observationSummary2(data) {
-  // TODO
+  data.results.forEach((element) => {
+    console.log(
+      '#' + element.id + ' (' + element.observed_on_details.date + ') ' + element.species_guess
+    );
+  });
 }
 
 /*******************************************************************************
