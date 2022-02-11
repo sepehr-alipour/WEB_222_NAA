@@ -688,9 +688,9 @@ function none() {
   }
   if (counter === arguments.length) {
     return true;
-  } else {
+  } 
     return false;
-  }
+  
 }
 
 /*******************************************************************************
