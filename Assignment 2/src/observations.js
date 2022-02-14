@@ -15,6 +15,8 @@
  * Please see all unit tests in the files problem-01.test.js, problem-02.test.js, etc.
  */
 
+const { results } = require('./data');
+
 /*******************************************************************************
  * Problem 0: learn how to work with the cases data.
  *
@@ -159,20 +161,21 @@ function observationSummary2(data) {
  * Your function should return the newly created Array.
  ******************************************************************************/
 function observationsByGeoPrivacy(data, geoPrivacy) {
-  if (!geoPrivacy 
-    || !isNaN(geoPrivacy) 
-    || geoPrivacy !== 'open'
-    ||geoPrivacy !== 'obscured'
-    ||geoPrivacy !== 'obscured'
-    ||geoPrivacy !== 'private') throw 'error';
-  var obsArray= [];
+  if (
+    !geoPrivacy ||
+    !isNaN(geoPrivacy) ||
+    geoPrivacy !== 'open' ||
+    geoPrivacy !== 'obscured' ||
+    geoPrivacy !== 'obscured' ||
+    geoPrivacy !== 'private'
+  )
+    throw 'error';
+  var obsArray = [];
 
   data.results.forEach((element) => {
-    if(element.taxon_geoprivacy===geoPrivacy)
-    obsArray.push(geoPrivacy);
+    if (element.taxon_geoprivacy === geoPrivacy) obsArray.push(geoPrivacy);
   });
   data.results.push(obsArray);
-
 }
 
 /*******************************************************************************
@@ -197,19 +200,22 @@ function observationsByGeoPrivacy(data, geoPrivacy) {
  * }
  ******************************************************************************/
 function transformObservation(original) {
-  let newPhotos=[];
-  original.photos.forEach(element => {
+  let newPhotos = [];
+  original.photos.forEach((element) => {
     newPhotos.push(element.url);
   });
-let observation= {
-  id: original.id
-  ,speciesGuess:original.species_guess
-  ,isResearchQuality:(original.quality_grade==='research'? true:false) 
-,coords:[parseFloat(original.location.split(',')[1]),parseFloat(original.location.split(',')[0])]
-,user:'@'+original.user.login_exact
-,photos:newPhotos
-,photosCount:newPhotos.length
-};
+  let observation = {
+    id: original.id,
+    speciesGuess: original.species_guess,
+    isResearchQuality: original.quality_grade === 'research' ? true : false,
+    coords: [
+      parseFloat(original.location.split(',')[1]),
+      parseFloat(original.location.split(',')[0])
+    ],
+    user: '@' + original.user.login_exact,
+    photos: newPhotos,
+    photosCount: newPhotos.length
+  };
   return observation;
 }
 
@@ -229,12 +235,11 @@ let observation= {
  *  - return the new Array containing all the transformed Objects
  ******************************************************************************/
 function transformObservations(data) {
- let observations=[];
-  data.results.forEach(element => {
-   observations.push(transformObservation(element));
- });
- return observations;
-
+  let observations = [];
+  data.results.forEach((element) => {
+    observations.push(transformObservation(element));
+  });
+  return observations;
 }
 
 /*******************************************************************************
@@ -251,7 +256,7 @@ function transformObservations(data) {
  *  - return the Array created by the .map() method
  ******************************************************************************/
 function transformObservations2(data) {
-  return data.results.map(element=>transformObservation(element) );
+  return data.results.map((element) => transformObservation(element));
 }
 
 /*******************************************************************************
@@ -285,7 +290,17 @@ function transformObservations2(data) {
  *  - use the .find() method to locate items by id, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
  ******************************************************************************/
 function getObservationsById(data, ...ids) {
-  // TODO
+  let dataArray = [];
+
+  data.results.forEach((element) => {
+    if (ids.find((item) => item === element.id)) {
+      dataArray.push(element);
+    }
+  });
+  if (dataArray.length === 0) return null;
+  if (dataArray.length === 1) return dataArray[0];
+
+  return dataArray;
 }
 
 /*******************************************************************************
