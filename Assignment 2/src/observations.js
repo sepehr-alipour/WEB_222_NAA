@@ -205,7 +205,7 @@ let observation= {
   id: original.id
   ,speciesGuess:original.species_guess
   ,isResearchQuality:(original.quality_grade==='research'? true:false) 
-,coords:[parseInt(original.location.split(',')[1]),parseInt(original.location.split(',')[0])]
+,coords:[parseFloat(original.location.split(',')[1]),parseFloat(original.location.split(',')[0])]
 ,user:'@'+original.user.login_exact
 ,photos:newPhotos
 ,photosCount:newPhotos.length
@@ -230,7 +230,7 @@ let observation= {
  ******************************************************************************/
 function transformObservations(data) {
  let observations=[];
-  data.forEach(element => {
+  data.results.forEach(element => {
    observations.push(transformObservation(element));
  });
  return observations;
@@ -251,7 +251,7 @@ function transformObservations(data) {
  *  - return the Array created by the .map() method
  ******************************************************************************/
 function transformObservations2(data) {
-  // TODO
+  return data.results.map(element=>transformObservation(element) );
 }
 
 /*******************************************************************************
