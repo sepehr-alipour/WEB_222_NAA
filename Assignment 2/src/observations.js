@@ -159,7 +159,20 @@ function observationSummary2(data) {
  * Your function should return the newly created Array.
  ******************************************************************************/
 function observationsByGeoPrivacy(data, geoPrivacy) {
-  // TODO
+  if (!geoPrivacy 
+    || !isNaN(geoPrivacy) 
+    || geoPrivacy !== 'open'
+    ||geoPrivacy !== 'obscured'
+    ||geoPrivacy !== 'obscured'
+    ||geoPrivacy !== 'private') throw 'error';
+  var obsArray= [];
+
+  data.results.forEach((element) => {
+    if(element.taxon_geoprivacy===geoPrivacy)
+    obsArray.push(geoPrivacy);
+  });
+  data.results.push(obsArray);
+
 }
 
 /*******************************************************************************
@@ -184,7 +197,20 @@ function observationsByGeoPrivacy(data, geoPrivacy) {
  * }
  ******************************************************************************/
 function transformObservation(original) {
-  // TODO
+  let newPhotos=[];
+  original.photos.forEach(element => {
+    newPhotos.push(element.url);
+  });
+let observation= {
+  id: original.id
+  ,speciesGuess:original.species_guess
+  ,isResearchQuality:(original.quality_grade==='research'? true:false) 
+,coords:[parseInt(original.location.split(',')[1]),parseInt(original.location.split(',')[0])]
+,user:'@'+original.user.login_exact
+,photos:newPhotos
+,photosCount:newPhotos.length
+};
+  return observation;
 }
 
 /*******************************************************************************
@@ -203,7 +229,12 @@ function transformObservation(original) {
  *  - return the new Array containing all the transformed Objects
  ******************************************************************************/
 function transformObservations(data) {
-  // TODO
+ let observations=[];
+  data.forEach(element => {
+   observations.push(transformObservation(element));
+ });
+ return observations;
+
 }
 
 /*******************************************************************************
