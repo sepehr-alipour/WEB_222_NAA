@@ -336,7 +336,22 @@ function getObservationsById(data, ...ids) {
  ******************************************************************************/
 
 function getObservationsByPositionalAccuracy(data, options = {}) {
-  // TODO
+  if (
+    Object.keys(options).length === 2 &&
+    Object.keys(options).includes('gt') &&
+    Object.keys(options).includes('lt')
+  )
+    return data.results.filter(
+      (item) => item.positional_accuracy > options.gt && item.positional_accuracy < options.lt
+    );
+  if (Object.keys(options).includes('eq'))
+    return data.results.filter((item) => item.positional_accuracy === options.eq);
+  if (Object.keys(options).includes('gt'))
+    return data.results.filter((item) => item.positional_accuracy > options.gt);
+  if (Object.keys(options).includes('lt'))
+    return data.results.filter((item) => item.positional_accuracy < options.lt);
+
+  return data.results;
 }
 
 /*******************************************************************************
