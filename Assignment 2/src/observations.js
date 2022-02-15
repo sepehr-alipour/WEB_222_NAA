@@ -162,20 +162,26 @@ function observationSummary2(data) {
  ******************************************************************************/
 function observationsByGeoPrivacy(data, geoPrivacy) {
   if (
-    !geoPrivacy ||
-    !isNaN(geoPrivacy) ||
-    geoPrivacy !== 'open' ||
-    geoPrivacy !== 'obscured' ||
-    geoPrivacy !== 'obscured' ||
-    geoPrivacy !== 'private'
-  )
-    throw 'error';
-  var obsArray = [];
+    geoPrivacy === null ||
+    geoPrivacy.toLowerCase() === 'open' ||
+    geoPrivacy.toLowerCase() === 'obscured' ||
+    geoPrivacy.toLowerCase() === 'private' ||
+    geoPrivacy.toLowerCase() === 'null'
+  ) {
+    let obsArray = [];
 
-  data.results.forEach((element) => {
-    if (element.taxon_geoprivacy === geoPrivacy) obsArray.push(geoPrivacy);
-  });
-  data.results.push(obsArray);
+    data.results.forEach((element) => {
+      if (
+        element.geoprivacy === geoPrivacy ||
+        (geoPrivacy !== null && element.geoprivacy === geoPrivacy.toLowerCase())
+      ) {
+        obsArray.push({ geoprivacy: geoPrivacy === null ? null : geoPrivacy.toLowerCase() });
+      }
+    });
+
+    return obsArray;
+  }
+  throw 'error';
 }
 
 /*******************************************************************************
