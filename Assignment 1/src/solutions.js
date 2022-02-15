@@ -199,10 +199,10 @@ function snake(value) {
  ******************************************************************************/
 
 function createVideo(src, width, controls) {
-  let srcVideo = src.trim();
-  let widthVideo = width > 0 && width % 1 == 0 ? ' width="' + width + '"' : '';
-  let controlsVideo = controls ? ' controls' : '';
-  let url = '<video src="' + srcVideo + '"' + widthVideo + controlsVideo + '>' + '</video>';
+  var srcVideo = src.trim();
+  var widthVideo = width > 0 && width % 1 === 0 ? ' width="' + width + '"' : '';
+  var controlsVideo = controls ? ' controls' : '';
+  var url = '<video src="' + srcVideo + '"' + widthVideo + controlsVideo + '>' + '</video>';
   return url;
 }
 
@@ -252,18 +252,22 @@ function createVideo(src, width, controls) {
  ******************************************************************************/
 
 function parseDateString(value) {
-  if (!value) throw 'invalid date string, expected a `YYYY-DD-MM` formatted string';
-
-  if (value.includes(' ') || value.includes('/'))
+  if (!value) {
     throw 'invalid date string, expected a `YYYY-DD-MM` formatted string';
+  }
+
+  if (value.includes(' ') || value.includes('/')) {
+    throw 'invalid date string, expected a `YYYY-DD-MM` formatted string';
+  }
 
   if (value.includes('-') && value.split('-')[0].length < 4)
     throw 'invalid date string, expected a `YYYY-DD-MM` formatted string';
 
-  if (value.includes('-') && value.split('-')[1].length < 2)
+  if (value.includes('-') && value.split('-')[1].length < 2) {
     throw 'invalid date string, expected a `YYYY-DD-MM` formatted string';
+  }
 
-  let date = new Date(value.split('-')[0], value.split('-')[1] - 1, value.split('-')[2]);
+  var date = new Date(value.split('-')[0], value.split('-')[1] - 1, value.split('-')[2]);
   return date;
 }
 
@@ -338,16 +342,17 @@ function normalizeCoord(value) {
   value = value.replaceAll('[', '');
   value = value.replaceAll(']', '');
 
-  let lat = value.split(',')[0];
-  let long = value.split(',')[1];
+  var lat = value.split(',')[0];
+  var long = value.split(',')[1];
 
   if (lat < 0 && long > 0) {
     lat = value.split(',')[1];
     long = value.split(',')[0];
   }
 
-  if (lat < -90 || lat > 90 || long < -180 || long > 180)
+  if (lat < -90 || lat > 90 || long < -180 || long > 180) {
     throw new Error('coord with invalid lat and long');
+  }
 
   return '(' + lat.trim() + ', ' + long.trim() + ')';
 }
@@ -380,8 +385,8 @@ function normalizeCoord(value) {
  ******************************************************************************/
 
 function formatCoords(...values) {
-  let record = '';
-  for (let i = 0; i < values.length; i++) {
+  var record = '';
+  for (var i = 0; i < values.length; i++) {
     try {
       record = record.concat(normalizeCoord(values[i]), ', ');
     } catch (err) {
@@ -551,16 +556,24 @@ function mimeFromFilename(filename) {
  ******************************************************************************/
 
 function generateLicenseLink(licenseCode, targetBlank) {
-  let url = '';
-  let text = 'All Rights Reserved';
-  let baseUrl = 'https://choosealicense.com';
-  let directory = '/no-permission/';
+  var url = '';
+  var text = 'All Rights Reserved';
+  var baseUrl = 'https://choosealicense.com';
+  var directory = '/no-permission/';
   if (licenseCode && licenseCode.startsWith('CC')) {
     text = 'Creative Commons Attribution';
-    if (licenseCode.includes('-NC')) text = text.concat('-', 'NonCommercial');
-    if (licenseCode.includes('-ND')) text = text.concat('-', 'NoDerivs');
-    if (licenseCode.includes('-SA')) text = text.concat('-', 'ShareAlike');
-    if (licenseCode.includes('-BY')) text = text.concat(' License');
+    if (licenseCode.includes('-NC')) {
+      text = text.concat('-', 'NonCommercial');
+    }
+    if (licenseCode.includes('-ND')) {
+      text = text.concat('-', 'NoDerivs');
+    }
+    if (licenseCode.includes('-SA')) {
+      text = text.concat('-', 'ShareAlike');
+    }
+    if (licenseCode.includes('-BY')) {
+      text = text.concat(' License');
+    }
     licenseCode = licenseCode.replace('CC-', '').toLowerCase();
     baseUrl = 'https://creativecommons.org';
     directory = '/licenses/' + licenseCode + '/4.0/';
@@ -603,9 +616,15 @@ function generateLicenseLink(licenseCode, targetBlank) {
  ******************************************************************************/
 
 function pureBool(value) {
-  if (typeof value === 'boolean') return value;
-  if (value > 0) return true;
-  if (value < 0) return false;
+  if (typeof value === 'boolean') {
+    return value;
+  }
+  if (value > 0) {
+    return true;
+  }
+  if (value < 0) {
+    return false;
+  }
   value = value + ' ';
   value = value.toLowerCase();
   switch (value.trim()) {
@@ -663,10 +682,15 @@ function any() {
 function none() {
   var counter = 0;
   for (var i = 0; i < arguments.length; i++) {
-    if (!pureBool(arguments[i])) counter++;
+    if (!pureBool(arguments[i])) {
+      counter++;
+    }
   }
-  if (counter === arguments.length) return true;
-  else return false;
+  if (counter === arguments.length) {
+    return true;
+  } 
+    return false;
+  
 }
 
 /*******************************************************************************
@@ -743,8 +767,8 @@ function buildUrl(query, order, count, license) {
     throw 'order error';
   }
   var url = 'https://api.inaturalist.org/v2/observations';
-  var query = '?query=' + encodeURIComponent(query);
-  var count = '&count=' + count;
+  query = '?query=' + encodeURIComponent(query);
+  count = '&count=' + count;
   return url + query + count + order + license;
 }
 
