@@ -84,7 +84,7 @@ function getTotalResults(data) {
  * observation Object in the results array, and calls `console.log()`, passing
  * it a formatted String that looks like this:
  *
- * "#67868131 (2021-01-10) Muskrat"
+ * '#67868131 (2021-01-10) Muskrat'
  *
  * The formatted String above is made up of the following observation properties:
  *
@@ -129,24 +129,24 @@ function observationSummary2(data) {
  * but don't want to share the location of my home.
  *
  * Write a function that takes Observation data, as well as a geoPrivacy value.
- * The geoPrivacy value describes whether the geolocation data is "open",
- * "obscured", "private", or null (i.e., unspecified).
+ * The geoPrivacy value describes whether the geolocation data is 'open',
+ * 'obscured', 'private', or null (i.e., unspecified).
  *
- * If the geoPrivacy value isn't one of "open", "obscured", "private", or null
+ * If the geoPrivacy value isn't one of 'open', 'obscured', 'private', or null
  * throw an error.  Make sure you deal with UPPER- and lower-case versions of the
  * strings when checking.
  *
  * Return a new Array with only those observation Objects that contain a geoprivacy
  * value that matches the geoPrivacy argument to your function.  For example:
  *
- * observationsByGeoPrivacy(data, "open") would return an Array of observation
- * objects that have `geoprivacy: "open"`.
+ * observationsByGeoPrivacy(data, 'open') would return an Array of observation
+ * objects that have `geoprivacy: 'open'`.
  *
  * observationsByGeoPrivacy(data, null) would return an Array of observation
  * objects that have `geoprivacy: null`.
  *
- * observationsByGeoPrivacy(data, "OPEN") would return an Array of observation
- * objects that have `geoprivacy: "open"` (i.e., UPPERCASE geoPrivacy values
+ * observationsByGeoPrivacy(data, 'OPEN') would return an Array of observation
+ * objects that have `geoprivacy: 'open'` (i.e., UPPERCASE geoPrivacy values
  * should be converted to lowercase).
  *
  * In your solution, make use of the following:
@@ -398,7 +398,42 @@ function getObservationsByPositionalAccuracy(data, options = {}) {
  * Your function should return the new Array of photo size Objects
  ******************************************************************************/
 function getTaxonPhotos(data) {
-  // TODO
+  let photos = [];
+  data.results.forEach((element) => {
+    if (element.taxon && element.taxon.default_photo) {
+      let url = element.taxon.default_photo.square_url;
+      let param = url.split('?').length > 1 ? '?' + url.split('?')[1] : '?'+element.taxon.default_photo.id;
+
+      photos.push({
+        original:
+          'https://static.inaturalist.org/photos/' +
+          element.taxon.default_photo.id +
+          '/original.jpg' +
+          param,
+        square:
+          'https://static.inaturalist.org/photos/' +
+          element.taxon.default_photo.id +
+          '/square.jpg' +
+          param,
+        small:
+          'https://static.inaturalist.org/photos/' +
+          element.taxon.default_photo.id +
+          '/small.jpg' +
+          param,
+        medium:
+          'https://static.inaturalist.org/photos/' +
+          element.taxon.default_photo.id +
+          '/medium.jpg' +
+          param,
+        large:
+          'https://static.inaturalist.org/photos/' +
+          element.taxon.default_photo.id +
+          '/large.jpg' +
+          param
+      });
+    }
+  });
+  return photos;
 }
 
 /*******************************************************************************
