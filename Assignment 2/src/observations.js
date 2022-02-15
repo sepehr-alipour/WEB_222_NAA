@@ -15,8 +15,6 @@
  * Please see all unit tests in the files problem-01.test.js, problem-02.test.js, etc.
  */
 
-const { results } = require('./data');
-
 /*******************************************************************************
  * Problem 0: learn how to work with the cases data.
  *
