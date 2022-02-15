@@ -402,7 +402,8 @@ function getTaxonPhotos(data) {
   data.results.forEach((element) => {
     if (element.taxon && element.taxon.default_photo) {
       let url = element.taxon.default_photo.square_url;
-      let param = url.split('?').length > 1 ? '?' + url.split('?')[1] : '?'+element.taxon.default_photo.id;
+      let param =
+        url.split('?').length > 1 ? '?' + url.split('?')[1] : '?' + element.taxon.default_photo.id;
 
       photos.push({
         original:
@@ -494,7 +495,31 @@ function getTaxonPhotos(data) {
  * }
  ******************************************************************************/
 function getUserStats(data) {
-  // TODO
+  let totalObservations=0;
+  let totalJournals=0;
+  let totalSpecies=0;
+
+  data.results.forEach((element) => {
+    totalObservations += element.user.observations_count;
+    totalJournals += element.user.journal_posts_count;
+    totalSpecies += element.user.species_count;
+  });
+  let count = data.results.length;
+  let total = {
+    count: count,
+    totals: {
+      observations: totalObservations,
+      journals: totalJournals,
+      species: totalSpecies
+    },
+    averages: {
+      observations: totalObservations / count,
+      journals: totalJournals / count,
+      species: totalSpecies / count
+    }
+  };
+
+  return total;
 }
 
 /**
