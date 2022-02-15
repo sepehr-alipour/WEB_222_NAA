@@ -495,9 +495,9 @@ function getTaxonPhotos(data) {
  * }
  ******************************************************************************/
 function getUserStats(data) {
-  let totalObservations=0;
-  let totalJournals=0;
-  let totalSpecies=0;
+  let totalObservations = 0;
+  let totalJournals = 0;
+  let totalSpecies = 0;
 
   data.results.forEach((element) => {
     totalObservations += element.user.observations_count;
@@ -538,7 +538,11 @@ function getUserStats(data) {
  * return the Array of time zones.
  */
 function extractTimeZones(data) {
-  // TODO
+  let timezone = [];
+  data.results.forEach((element) => {
+    if (!timezone.includes(element.created_time_zone)) timezone.push(element.created_time_zone);
+  });
+  return timezone;
 }
 
 /**
@@ -556,7 +560,12 @@ function extractTimeZones(data) {
  */
 
 function extractTimeZones2(data) {
-  // TODO
+  let timezone = new Set();
+
+  data.results.forEach((element) => {
+    timezone.add(element.created_time_zone);
+  });
+  return Array.from(timezone);
 }
 
 // Our unit test files need to access the functions we defined
