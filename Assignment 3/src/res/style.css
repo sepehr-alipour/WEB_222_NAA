@@ -1,0 +1,48 @@
+nav ul,
+ul.social {
+  list-style-type: none;
+  margin: 0;
+  padding: 8px;
+  background-color: #161f27;
+}
+
+nav li,
+ul.social li {
+  display: inline;
+}
+nav a {
+  padding: 8px;
+}
+.active {
+  color: var(--code);
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+img {
+  border-end-end-radius: 3%;
+  border-end-start-radius: 3%;
+}
+.button {
+  color: var(--code);
+  padding: 16px 32px;
+  display: inline-block;
+  background-color: #161f27;
+  border: 2px solid #161f27;
+}
+.card {
+  background-color: #161f27;
+  padding: 20px 50px;
+  border-radius: 3%;
+}
+.center {
+  text-align: center;
+}
+.circle {
+  padding: 10px;
+  shape-outside: ellipse();
+  border-radius: 50%;
+}
