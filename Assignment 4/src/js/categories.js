@@ -9,7 +9,7 @@
  */
 
 window.categories = [
-  /*
-    { id: "c1", name: "Category 1" },
-   */
+  { id: "cgp", name: "Gaming PC" },
+  { id: "cop", name: "Office PC" },
+  { id: "ca", name: "Accessories" }
 ];

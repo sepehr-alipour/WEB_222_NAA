@@ -13,14 +13,174 @@
  */
 
 window.products = [
-  /*
-    {
-      id: "P1",
-      title: "Title 1",
-      description: "Description 1...",
-      price: 199,
-      discontinued: false,
-      categories: ["c1"]
-    },
-  */
+  {
+    id: "GLTB",
+    title: "Titan Black",
+    description: "This gaming pc is assembled for low level graphic games",
+    price: 202.99,
+    discontinued: false,
+    categories: ["cgp"]
+  },
+  {
+    id: "GLTBL",
+    title: "Titan Blue",
+    description: "This gaming pc is assembled for low level graphic games",
+    price: 202.99,
+    discontinued: true,
+    categories: ["cgp"]
+  },
+  {
+    id: "GLTG",
+    title: "Titan Green",
+    description: "This gaming pc is assembled for low level graphic games",
+    price: 202.99,
+    discontinued: false,
+    categories: ["cgp"]
+  },
+  {
+    id: "GMCB",
+    title: "Commando Black",
+    description: "This gaming pc is assembled for medium level graphic games",
+    price: 593.99,
+    discontinued: false,
+    categories: ["cgp"]
+  },
+  {
+    id: "GMCBL",
+    title: "Commando Blue",
+    description: "This gaming pc is assembled for medium level graphic games",
+    price: 593.99,
+    discontinued: false,
+    categories: ["cgp"]
+  },
+  {
+    id: "GMCG",
+    title: "Commando Green",
+    description: "This gaming pc is assembled for medium level graphic games",
+    price: 593.99,
+    discontinued: true,
+    categories: ["cgp"]
+  },
+  {
+    id: "GHHB",
+    title: "Hero Black",
+    description: "This gaming pc is assembled for high level graphic games",
+    price: 1004.99,
+    discontinued: false,
+    categories: ["cgp"]
+  },
+  {
+    id: "GHHBL",
+    title: "Hero Blue",
+    description: "This gaming pc is assembled for high level graphic games",
+    price: 1004.99,
+    discontinued: false,
+    categories: ["cgp"]
+  },
+  {
+    id: "GHHG",
+    title: "Hero Green",
+    description: "This gaming pc is assembled for high level graphic games",
+    price: 1004.99,
+    discontinued: false,
+    categories: ["cgp"]
+  },
+  {
+    id: "OLTB",
+    title: "Titan Black",
+    description: "This office pc is assembled for low level graphic games",
+    price: 202.99,
+    discontinued: false,
+    categories: ["cop"]
+  },
+  {
+    id: "OLTBL",
+    title: "Titan Blue",
+    description: "This office pc is assembled for low level graphic games",
+    price: 202.99,
+    discontinued: true,
+    categories: ["cop"]
+  },
+  {
+    id: "OLTG",
+    title: "Titan Green",
+    description: "This office pc is assembled for low level graphic games",
+    price: 202.99,
+    discontinued: false,
+    categories: ["cop"]
+  },
+  {
+    id: "OMCB",
+    title: "Commando Black",
+    description: "This office pc is assembled for medium level graphic games",
+    price: 593.99,
+    discontinued: false,
+    categories: ["cop"]
+  },
+  {
+    id: "OMCBL",
+    title: "Commando Blue",
+    description: "This office pc is assembled for medium level graphic games",
+    price: 593.99,
+    discontinued: false,
+    categories: ["cop"]
+  },
+  {
+    id: "OMCG",
+    title: "Commando Green",
+    description: "This office pc is assembled for medium level graphic games",
+    price: 593.99,
+    discontinued: true,
+    categories: ["cop"]
+  },
+  {
+    id: "OHHB",
+    title: "Hero Black",
+    description: "This office pc is assembled for high level graphic games",
+    price: 1004.99,
+    discontinued: false,
+    categories: ["cop"]
+  },
+  {
+    id: "OHHBL",
+    title: "Hero Blue",
+    description: "This office pc is assembled for high level graphic games",
+    price: 1004.99,
+    discontinued: false,
+    categories: ["cop"]
+  },
+  {
+    id: "OHHG",
+    title: "Hero Green",
+    description: "This office pc is assembled for high level graphic games",
+    price: 1004.99,
+    discontinued: false,
+    categories: ["cop"]
+  },
+  {
+    id: "ASSD",
+    title: "Solid State Drives",
+    description: "120GB SATA III 2.5 Internal Solid State Drive SSD TLC",
+    price: 30.99,
+    discontinued: false,
+    categories: ["ca"]
+  },
+  {
+    id: "ALBK",
+    title: "Logitech Black Keyboard",
+    description:
+      "Gaming Keyboard Set, Wired USB Gaming Keyboard with Bright Rainbow Backlight and Glow Keys, 19-Key Anti-Ghosting, Plug & Play to Computer,Laptop,PC,Windows - UK Layout",
+    price: 20.99,
+    discontinued: true,
+    categories: ["ca"]
+  },
+  {
+    id: "ALBM",
+    title: "Logitech Black Mouse",
+    description:
+      "Gaming Mouse Set, Wired USB Gaming Mouse with Bright Rainbow Backlight and Glow Keys, 19-Key Anti-Ghosting, Plug & Play to Computer,Laptop,PC,Windows - UK Layout",
+    price: 20.99,
+    discontinued: false,
+    categories: ["ca"]
+  }
 ];
