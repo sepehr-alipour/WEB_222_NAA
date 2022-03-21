@@ -17,7 +17,7 @@ window.products = [
     id: "GLTB",
     title: "Titan Black",
     description: "This gaming pc is assembled for low level graphic games",
-    price: 202.99,
+    price: 20299,
     discontinued: false,
     categories: ["cgp"]
   },
@@ -25,7 +25,7 @@ window.products = [
     id: "GLTBL",
     title: "Titan Blue",
     description: "This gaming pc is assembled for low level graphic games",
-    price: 202.99,
+    price: 20299,
     discontinued: true,
     categories: ["cgp"]
   },
@@ -33,7 +33,7 @@ window.products = [
     id: "GLTG",
     title: "Titan Green",
     description: "This gaming pc is assembled for low level graphic games",
-    price: 202.99,
+    price: 20299,
     discontinued: false,
     categories: ["cgp"]
   },
@@ -41,7 +41,7 @@ window.products = [
     id: "GMCB",
     title: "Commando Black",
     description: "This gaming pc is assembled for medium level graphic games",
-    price: 593.99,
+    price: 59399,
     discontinued: false,
     categories: ["cgp"]
   },
@@ -49,7 +49,7 @@ window.products = [
     id: "GMCBL",
     title: "Commando Blue",
     description: "This gaming pc is assembled for medium level graphic games",
-    price: 593.99,
+    price: 59399,
     discontinued: false,
     categories: ["cgp"]
   },
@@ -57,7 +57,7 @@ window.products = [
     id: "GMCG",
     title: "Commando Green",
     description: "This gaming pc is assembled for medium level graphic games",
-    price: 593.99,
+    price: 59399,
     discontinued: true,
     categories: ["cgp"]
   },
@@ -65,7 +65,7 @@ window.products = [
     id: "GHHB",
     title: "Hero Black",
     description: "This gaming pc is assembled for high level graphic games",
-    price: 1004.99,
+    price: 100499,
     discontinued: false,
     categories: ["cgp"]
   },
@@ -73,7 +73,7 @@ window.products = [
     id: "GHHBL",
     title: "Hero Blue",
     description: "This gaming pc is assembled for high level graphic games",
-    price: 1004.99,
+    price: 100499,
     discontinued: false,
     categories: ["cgp"]
   },
@@ -81,7 +81,7 @@ window.products = [
     id: "GHHG",
     title: "Hero Green",
     description: "This gaming pc is assembled for high level graphic games",
-    price: 1004.99,
+    price: 100499,
     discontinued: false,
     categories: ["cgp"]
   },
@@ -89,7 +89,7 @@ window.products = [
     id: "OLTB",
     title: "Titan Black",
     description: "This office pc is assembled for low level graphic games",
-    price: 202.99,
+    price: 20299,
     discontinued: false,
     categories: ["cop"]
   },
@@ -97,7 +97,7 @@ window.products = [
     id: "OLTBL",
     title: "Titan Blue",
     description: "This office pc is assembled for low level graphic games",
-    price: 202.99,
+    price: 20299,
     discontinued: true,
     categories: ["cop"]
   },
@@ -105,7 +105,7 @@ window.products = [
     id: "OLTG",
     title: "Titan Green",
     description: "This office pc is assembled for low level graphic games",
-    price: 202.99,
+    price: 20299,
     discontinued: false,
     categories: ["cop"]
   },
@@ -113,7 +113,7 @@ window.products = [
     id: "OMCB",
     title: "Commando Black",
     description: "This office pc is assembled for medium level graphic games",
-    price: 593.99,
+    price: 59399,
     discontinued: false,
     categories: ["cop"]
   },
@@ -121,7 +121,7 @@ window.products = [
     id: "OMCBL",
     title: "Commando Blue",
     description: "This office pc is assembled for medium level graphic games",
-    price: 593.99,
+    price: 59399,
     discontinued: false,
     categories: ["cop"]
   },
@@ -129,7 +129,7 @@ window.products = [
     id: "OMCG",
     title: "Commando Green",
     description: "This office pc is assembled for medium level graphic games",
-    price: 593.99,
+    price: 59399,
     discontinued: true,
     categories: ["cop"]
   },
@@ -137,7 +137,7 @@ window.products = [
     id: "OHHB",
     title: "Hero Black",
     description: "This office pc is assembled for high level graphic games",
-    price: 1004.99,
+    price: 100499,
     discontinued: false,
     categories: ["cop"]
   },
@@ -145,7 +145,7 @@ window.products = [
     id: "OHHBL",
     title: "Hero Blue",
     description: "This office pc is assembled for high level graphic games",
-    price: 1004.99,
+    price: 100499,
     discontinued: false,
     categories: ["cop"]
   },
@@ -153,7 +153,7 @@ window.products = [
     id: "OHHG",
     title: "Hero Green",
     description: "This office pc is assembled for high level graphic games",
-    price: 1004.99,
+    price: 100499,
     discontinued: false,
     categories: ["cop"]
   },
@@ -161,7 +161,7 @@ window.products = [
     id: "ASSD",
     title: "Solid State Drives",
     description: "120GB SATA III 2.5 Internal Solid State Drive SSD TLC",
-    price: 30.99,
+    price: 3099,
     discontinued: false,
     categories: ["ca"]
   },
@@ -170,7 +170,7 @@ window.products = [
     title: "Logitech Black Keyboard",
     description:
       "Gaming Keyboard Set, Wired USB Gaming Keyboard with Bright Rainbow Backlight and Glow Keys, 19-Key Anti-Ghosting, Plug & Play to Computer,Laptop,PC,Windows - UK Layout",
-    price: 20.99,
+    price: 2099,
     discontinued: true,
     categories: ["ca"]
   },
@@ -179,7 +179,7 @@ window.products = [
     title: "Logitech Black Mouse",
     description:
       "Gaming Mouse Set, Wired USB Gaming Mouse with Bright Rainbow Backlight and Glow Keys, 19-Key Anti-Ghosting, Plug & Play to Computer,Laptop,PC,Windows - UK Layout",
-    price: 20.99,
+    price: 2099,
     discontinued: false,
     categories: ["ca"]
   }
