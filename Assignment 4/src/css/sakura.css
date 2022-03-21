@@ -105,10 +105,12 @@ ul {
   padding-left: 1.4em;
   margin-top: 0px;
   margin-bottom: 2.5rem;
+  list-style-type: none;
+  display: flex;
 }
 
 li {
-  margin-bottom: 0.4em;
+  margin: 0.4em;
 }
 
 blockquote {
